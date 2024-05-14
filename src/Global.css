@@ -27,12 +27,30 @@ input {
 
 #img-meme {
   background-color: #e8e8e8;
+  border-radius: 0.7em;
+  object-fit: contain;
+}
+
+.img-meme {
+  background-color: #e8e8e8;
   border-radius: 0.5em;
   object-fit: contain;
 }
 
 .container-media {
   gap: 3rem;
+}
+
+.img-p-one {
+  margin-top: 0.7em;
+  font-size: 3em;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.img-p-two {
+  margin-bottom: 0.7em;
+  font-size: 3em;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 @media (max-width: 620px) {
@@ -46,5 +64,16 @@ input {
   }
   .react-course {
     display: none;
+  }
+  .img-p-one {
+    margin-top: 0.5em;
+    font-size: 1.5em;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+
+  .img-p-two {
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 }

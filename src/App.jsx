@@ -26,8 +26,12 @@ function App() {
           </button>
         </form>
         <div>
-          <div id="img-meme" className="w-full mt-8">
-            <img className="w-full" src="../src/assets/memeimg.png" alt="" />
+          <div id="img-meme" className="w-full mt-8 relative">
+            <img className="w-full img-meme" src="../src/assets/memeimg.png" alt="" />
+            <p className="absolute img-p-one top-0 left-0 text-white font-bold w-full text-center">Shut up</p>
+            <p className="absolute img-p-two bottom-0 left-0 text-white font-bold w-full text-center">
+              And take my money
+            </p>
           </div>
         </div>
       </main>
