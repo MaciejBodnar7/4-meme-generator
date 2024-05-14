@@ -9,7 +9,7 @@ export default function Navbar() {
             <img className="w-14" src="../src/assets/Troll Face.png" alt="" />
             <p className="text-2xl font-bold ml-4">Meme genrator</p>
           </div>
-          <p>React Course - Project 4</p>
+          <p className="react-course">React Course - Project 4</p>
         </div>
       </nav>
     </>

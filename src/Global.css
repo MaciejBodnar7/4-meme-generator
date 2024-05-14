@@ -26,8 +26,25 @@ input {
 }
 
 #img-meme {
-  height: 20em;
-  background-color: #404040;
+  background-color: #e8e8e8;
   border-radius: 0.5em;
-  object-fit: cover;
+  object-fit: contain;
+}
+
+.container-media {
+  gap: 3rem;
+}
+
+@media (max-width: 620px) {
+  .container-media {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  form {
+    margin-top: 1.5em !important;
+  }
+  .react-course {
+    display: none;
+  }
 }

@@ -5,19 +5,19 @@ function App() {
     <>
       <main className="container-custom">
         <form action="" className="flex flex-col w-full mt-16">
-          <div className="flex justify-between gap-12">
+          <div className="container-media flex justify-between">
             <div className="flex flex-col w-full">
               <label htmlFor="top-text">Top text</label>
-              <input className="py-4 px-2" type="text" name="top-text" id="top-text" placeholder="Shut up" />
+              <input className="py-4 px-4" type="text" name="top-text" id="top-text" placeholder="Shut up" />
             </div>
             <div className="flex flex-col w-full">
               <label htmlFor="bottom-text">Bottom text</label>
               <input
-                className="py-4 px-2"
+                className="py-4 px-4"
                 type="text"
                 name="bottom-text"
                 id="bottom-text"
-                placeholder="and take my money"
+                placeholder="And take my money"
               />
             </div>
           </div>
@@ -27,7 +27,7 @@ function App() {
         </form>
         <div>
           <div id="img-meme" className="w-full mt-8">
-            <img src="" alt="" />
+            <img className="w-full" src="../src/assets/memeimg.png" alt="" />
           </div>
         </div>
       </main>
