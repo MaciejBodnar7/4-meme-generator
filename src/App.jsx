@@ -1,6 +1,23 @@
+import React from "react"
+import { useState } from "react"
 import "./Global.css"
+import memeData from "./memeData.js"
 
 function App() {
+  function clickHandle(e) {
+    e.preventDefault()
+
+    const memes = memeData.data.memes
+    const randomObject = memes[Math.floor(Math.random() * memeData.data.memes.length) + 1]
+    const url = randomObject.url
+
+    setMemeImg(prevState => {
+      return (prevState = url)
+    })
+  }
+
+  const [memeImg, setMemeImg] = React.useState("../src/assets/memeimg.png")
+
   return (
     <>
       <main className="container-custom">
@@ -21,13 +38,13 @@ function App() {
               />
             </div>
           </div>
-          <button className="gradient py-4 text-white rounded-lg mt-8 font-bold" type="submit">
+          <button onClick={clickHandle} className="gradient py-4 text-white rounded-lg mt-8 font-bold" type="submit">
             Get a new meme image
           </button>
         </form>
         <div>
-          <div id="img-meme" className="w-full mt-8 relative">
-            <img className="w-full img-meme" src="../src/assets/memeimg.png" alt="" />
+          <div id="img-meme" className="w-full mt-8 relative mb-8">
+            <img className="w-full img-meme" src={memeImg} alt="" />
             <p className="absolute img-p-one top-0 left-0 text-white font-bold w-full text-center">Shut up</p>
             <p className="absolute img-p-two bottom-0 left-0 text-white font-bold w-full text-center">
               And take my money
