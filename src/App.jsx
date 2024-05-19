@@ -7,16 +7,25 @@ function App() {
   function clickHandle(e) {
     e.preventDefault()
 
-    const memes = memeData.data.memes
-    const randomObject = memes[Math.floor(Math.random() * memeData.data.memes.length) + 1]
+    const memes = allMemeImages.data.memes
+    const randomObject = memes[Math.floor(Math.random() * memes.length) + 1]
     const url = randomObject.url
 
-    setMemeImg(prevState => {
-      return (prevState = url)
+    setMemeImg(prevMeme => {
+      return {
+        ...prevMeme,
+        randomImage: url,
+      }
     })
   }
 
-  const [memeImg, setMemeImg] = React.useState("../src/assets/memeimg.png")
+  const [memeImg, setMemeImg] = React.useState({
+    topText: "Shut up",
+    bottomText: "And take my money",
+    randomImage: "http://i.imgflip.com/1bij.jpg",
+  })
+
+  const [allMemeImages, setAllMemeImages] = React.useState(memeData)
 
   return (
     <>
@@ -44,10 +53,10 @@ function App() {
         </form>
         <div>
           <div id="img-meme" className="w-full mt-8 relative mb-8">
-            <img className="w-full img-meme" src={memeImg} alt="" />
-            <p className="absolute img-p-one top-0 left-0 text-white font-bold w-full text-center">Shut up</p>
+            <img className="w-full img-meme" src={memeImg.randomImage} alt="" />
+            <p className="absolute img-p-one top-0 left-0 text-white font-bold w-full text-center">{memeImg.topText}</p>
             <p className="absolute img-p-two bottom-0 left-0 text-white font-bold w-full text-center">
-              And take my money
+              {memeImg.bottomText}
             </p>
           </div>
         </div>
