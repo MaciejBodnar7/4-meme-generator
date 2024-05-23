@@ -19,6 +19,16 @@ function App() {
     })
   }
 
+  function handleChange(event) {
+    const { name, value } = event.target
+    setMemeImg(prevMeme => {
+      return {
+        ...prevMeme,
+        [name]: value,
+      }
+    })
+  }
+
   const [memeImg, setMemeImg] = React.useState({
     topText: "Shut up",
     bottomText: "And take my money",
@@ -34,16 +44,26 @@ function App() {
           <div className="container-media flex justify-between">
             <div className="flex flex-col w-full">
               <label htmlFor="top-text">Top text</label>
-              <input className="py-4 px-4" type="text" name="top-text" id="top-text" placeholder="Shut up" />
+              <input
+                className="py-4 px-4"
+                type="text"
+                name="topText"
+                id="top-text"
+                placeholder="Shut up"
+                value={memeImg.topText}
+                onChange={handleChange}
+              />
             </div>
             <div className="flex flex-col w-full">
               <label htmlFor="bottom-text">Bottom text</label>
               <input
                 className="py-4 px-4"
                 type="text"
-                name="bottom-text"
+                name="bottomText"
                 id="bottom-text"
                 placeholder="And take my money"
+                value={memeImg.bottomText}
+                onChange={handleChange}
               />
             </div>
           </div>
