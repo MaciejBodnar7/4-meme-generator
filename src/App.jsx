@@ -1,7 +1,5 @@
 import React from "react"
-import { useState } from "react"
 import "./Global.css"
-import memeData from "./memeData.js"
 
 function App() {
   function clickHandle(e) {
@@ -35,7 +33,13 @@ function App() {
     randomImage: "http://i.imgflip.com/1bij.jpg",
   })
 
-  const [allMemeImages, setAllMemeImages] = React.useState(memeData)
+  const [allMemeImages, setAllMemeImages] = React.useState([])
+
+  React.useEffect(() => {
+    fetch(`https://api.imgflip.com/get_memes`)
+      .then(res => res.json())
+      .then(data => setAllMemeImages(data))
+  }, [])
 
   return (
     <>
